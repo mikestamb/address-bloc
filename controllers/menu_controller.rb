@@ -48,25 +48,24 @@ require_relative '../models/address_book'
      end
    end
  
+
  # #10
    def view_all_entries
+      @address_book.entries.each do |entry|
+       system "clear"
+       puts entry.to_s
+ # #15
+       entry_submenu(entry)
+     end
+ 
+     system "clear"
+     puts "End of entries"
    end
  
    def create_entry
-   end
- 
-   def search_entries
-   end
- 
-   def read_csv
-   end
- end
- 
- def create_entry
- # #11
+    
      system "clear"
      puts "New AddressBloc Entry"
- # #12
      print "Name: "
      name = gets.chomp
      print "Phone number: "
@@ -80,18 +79,11 @@ require_relative '../models/address_book'
      system "clear"
      puts "New entry created"
    end
-   
-    def view_all_entries
- # #14
-     @address_book.entries.each do |entry|
-       system "clear"
-       puts entry.to_s
- # #15
-       entry_submenu(entry)
-     end
  
-     system "clear"
-     puts "End of entries"
+   def search_entries
+   end
+ 
+   def read_csv
    end
    
     def entry_submenu(entry)
@@ -120,3 +112,5 @@ require_relative '../models/address_book'
        entries_submenu(entry)
      end
    end
+ end
+  
