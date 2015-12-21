@@ -85,5 +85,10 @@ require_relative '../models/address_book'
        check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
      end
         
+     it "imports from 2nd csv" do
+      book.import_from_csv("entries2.csv")
+      entry_one = book.entries[0]
+      check_entry(entry_one, "Dave","555-555-5415", "dave@blocmail.com" )
+     end
    end
  end
