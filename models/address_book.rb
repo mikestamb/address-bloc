@@ -17,7 +17,7 @@ require "csv"
          
          if name < entry.name
          break
-    end
+         end
        index += 1
     end
      
@@ -39,13 +39,12 @@ require "csv"
        lower = 0
      upper = @entries.length - 1
 
- # #2
+
      while lower <= upper
- # #3
+
        mid = (lower + upper) / 2
        mid_name = @entries[mid].name
- 
- # #4
+
        if name == mid_name
          return @entries[mid]
        elsif name < mid_name
